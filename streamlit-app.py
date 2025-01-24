@@ -40,10 +40,8 @@ with st.sidebar:
 
     if st.button("EDA", use_container_width=True, on_click=set_page_selection, args=('eda',)):
         st.session_state.page_selection = "eda"
-# Create chart
-        chart = alt.Chart(df).mark_point().encode(x='petal_length', y='petal_width', color="species")
-	    # Display chart
-	st.write(chart)
+	    chart = alt.Chart(df).mark_point().encode(x='petal_length', y='petal_width', color="species")
+	    st.write(chart)
 
     if st.button("Data Cleaning / Pre-processing", use_container_width=True, on_click=set_page_selection, args=('data_cleaning',)):
         st.session_state.page_selection = "data_cleaning"
